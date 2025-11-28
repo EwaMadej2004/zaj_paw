@@ -4,10 +4,8 @@ from . import views
 
 urlpatterns = [
     # OSOBA
-    path("osoby/", views.osoba_list, name="osoba-list"),
-    path("osoby/create/", views.osoba_create, name="osoba-create"),
-    path("osoby/<int:pk>/", views.osoba_detail, name="osoba-detail"),
-    path("osoby/szukaj/<str:tekst>/", views.osoba_filter_by_nazwisko, name="osoba-szukaj"),
+    path("osoby/", views.OsobaListCreateAPIView.as_view(), name="osoba-list-create"),
+    path("osoby/<int:pk>/", views.OsobaRetrieveUpdateDestroyAPIView.as_view(), name="osoba-detail-update-delete"),
 
     # STANOWISKO
     path("stanowiska/", views.stanowisko_list, name="stanowisko-list"),
